@@ -12,6 +12,8 @@ While numerous keyboard layouts are optimized for polyglot European users, espec
 
 At its core, this layout retains the intuitive design of the US keyboard, ensuring that users don't have to unlearn anything. Every symbol and letter functions exactly like the US keyboard. However, it goes beyond by offering up to seven levels of symbols for most keys, allowing for a vast array of symbols and characters. This is a significant enhancement over most layouts, which typically offer a maximum of four levels. Dead key as a necessary evil is introduced, but only on the 3rd layer; therefore, it doesn't affect the typing of English, Spanish or German, but other languages like French and Italian would involve using dead keys.
 
+Heptad is built on the standard `us(intl)` layout (it `include`s `us(intl)`) and leaves the entire US QWERTY base untouched: every key's unshifted and Shift output is exactly that of US English, so nothing you already type changes. The added capacity lives on the AltGr layer and on new Super-key layers, which carry the accented characters, currencies, Greek letters, and the math symbols.
+
 ### Introduction
 
 Heptad bridges the gap between mathematical typing, multilingual capabilities, and familiarity with the standard US keyboard layout.
