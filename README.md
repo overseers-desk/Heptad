@@ -2,7 +2,7 @@
 
 ![The layout of a seven level keyboard](layout.png)
 
-Heptad is a keyboard layout that combines multilingual typing, efficient math-symbol input, and the familiarity of the standard US keyboard layout. It serves people who frequently type in multiple languages and need quick access to a wide range of mathematical symbols, while keeping the learning curve minimal.
+Heptad is a seven-level keyboard layout that combines multilingual typing, efficient math-symbol input, and the familiarity of the standard US keyboard layout. The name says what sets it apart: a heptad is a group of seven, and where most layouts stop at four levels, Heptad gives most keys up to seven. It serves people who frequently type in multiple languages and need quick access to a wide range of mathematical symbols, while keeping the learning curve minimal.
 
 ### The Problem
 
