@@ -2,9 +2,9 @@
 
 ## The name
 
-Heptad is a group of seven, chosen for a seven-level keyboard. The defining feature is the count of levels: most layouts stop at four, and this one reaches seven. The README intro carries the short form of this; the rest of the reasoning is recorded here so it is not lost.
+Heptad is a group of seven, chosen for a seven-level keyboard. The defining feature is the count of levels: most layouts stop at four, and this one reaches seven. The README intro carries the short form of this; the fuller reasoning is recorded here.
 
-The layout was previously called SmartLayer. That name was dropped because it collided in search with the Smart Layer blockchain brand. A layout's name doubles as its search term and its entry in the community catalogues, so a collision with a well-known unrelated project is a real distribution cost, not a cosmetic one.
+The name is deliberately a search-unique single word. A layout's name doubles as its search term and its entry in the community catalogues, so a name that collides with a well-known unrelated project carries a real distribution cost, not a cosmetic one.
 
 Recent alternative layouts converge on short, abstract, search-unique single words: Gallium, Graphite, Canary, Sturdy. Heptad sits in that convention. The closest neighbour by genre (a multilingual layout extended for programmers and scientists rather than an ergonomic remap) is EurKEY.
 
