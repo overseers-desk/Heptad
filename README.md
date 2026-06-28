@@ -55,7 +55,7 @@ This table only covers the usage of additions to The "English (intl., with AltGr
 | Symbol Name                  | How to Type Them                      | Examples                                                           |
 |-----------------------------|---------------------------------------|---------------------------------------------------------------------|
 | Euro Sign (€)               | <kbd>AltGr</kbd> + <kbd>4</kbd>         | "The price is €50."                                                  |
-| Bitcoin (₿)                 | <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> | "The current value of Bitcoin is ₿1 = $40,000."                       |
+| Bitcoin (₿)                 | <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> | "Paid ₿0.05 for the order."                       |
 | Greek Letters (α, ξ)        | (Based on key mapping)                | "The angle α is 60°." "The variable ξ represents..."                  |
 | Italic Letters (e.g., 𝑛)    | <kbd>Super</kbd> + [letter]           | "Let 𝑛 be the number of elements."                                   |
 | Subscript Digits            | <kbd>Super</kbd> + [digit]            | "The chemical formula is H₂O."                                       |
