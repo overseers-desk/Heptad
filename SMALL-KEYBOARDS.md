@@ -43,7 +43,7 @@ In the file `/usr/share/X11/xkb/keycodes/evdev` on many Linux distributions, you
 
 This means that keycode 203 corresponds to the LVL5 key in X11. Due to an established offset of +8 between X11 keycodes and Linux driver keycodes (historically set at this value), the actual keycode transmitted by the Linux driver for the LVL5 key would be 195 (`203 - 8`). 
 
-However, I haven't personally tested this approach since I'm not familiar with keyboard firmware programming frameworks like QMK/VIA, and I suspect if it would work, since key 195 is not defined in `linux/include/uapi/linux/input-event-codes.h` at all. It appears no existing keyboard has LVL5 keys, or even if it does the Linux kernel may not recognize an event when it is pressed as USB HID keycode 195 is undefined.
+This approach is untested and may not work. Key 195 is not defined in `linux/include/uapi/linux/input-event-codes.h` at all, so no existing keyboard appears to have LVL5 keys; even if one did, the Linux kernel may not register the event when it is pressed, since USB HID keycode 195 is undefined.
 
 If your keyboard firmware supports a tap-and-hold feature natively, you could program the CAPSLOCK key such that when held, it sends the Linux driver keycode 195. With luck, this may be interpreted by X11 as holding down the LVL5 key. 
 

@@ -1,8 +1,8 @@
-# SmartLayer: A 7-Layered Multi-Lingual Keyboard Layout Optimized for Math Symbols and Efficiency
+# Heptad: A Seven-Level Multilingual Keyboard Layout Optimized for Math Symbols and Efficiency
 
 ![The layout of a seven level keyboard](layout.png)
 
-Welcome to the SmartLayer repository. This project is dedicated to providing a unique keyboard layout that seamlessly combines multi-lingual typing, efficient math symbol input, and the familiarity of the standard US keyboard layout. SmartLayer is designed to enhance productivity for users who frequently type in multiple languages and require quick access to a wide range of mathematical symbols, all while maintaining a minimal learning curve.
+Heptad is a keyboard layout that combines multilingual typing, efficient math-symbol input, and the familiarity of the standard US keyboard layout. It serves people who frequently type in multiple languages and need quick access to a wide range of mathematical symbols, while keeping the learning curve minimal.
 
 ### The Problem
 
@@ -14,7 +14,7 @@ At its core, this layout retains the intuitive design of the US keyboard, ensuri
 
 ### Introduction
 
-The SmartLayer is a unique keyboard layout designed to bridge the gap between mathematical typing, multi-lingual capabilities, and familiarity with the standard US keyboard layout.
+Heptad bridges the gap between mathematical typing, multilingual capabilities, and familiarity with the standard US keyboard layout.
 
 At its core, this layout retains the intuitive design of the US keyboard, ensuring that users don't have to unlearn anything. Every symbol and letter functions exactly like the US keyboard. However, it goes beyond by offering up to seven levels of symbols for most keys, allowing for a vast array of symbols and characters. This is a significant enhancement over most layouts, which typically offer a maximum of four levels.
 
@@ -72,13 +72,13 @@ This table only covers the usage of additions to The "English (intl., with AltGr
 
 ### Implementation
 
-In this repository, we provide implementations of the SmartLayer for Linux and *nix systems using the XKB system.
+Heptad is implemented for Linux and *nix systems using the XKB system.
 
 The layout is based on a modification of the "English (intl., with AltGr dead keys)" keyboard layout, originally developed by Microsoft[^microsoft]. It's optimized for typing mathematical symbols and expressions without compromising the original layout's multi-lingual capabilities.
 
 The implementation is designed as a diff file against the /usr/share/X11/xkb/symbols/us file that comes with Ubuntu, replacing the "English (intl., with AltGr dead keys)" layout directly. The repository is updated with every Ubuntu LTS release.
 
-To use the SmartLayer on your Linux/*nix system, follow the installation instructions provided in the repository.
+To use Heptad on your Linux/*nix system, follow the installation instructions below.
 
 [^microsoft]: The "English (intl., with AltGr dead keys)" layout, originally developed by Microsoft, enables typing in virtually any Latin-based script. It is optimised explicitly for Spanish and French, designed to minimize the use of dead keys. Only a few words, such as "bilingüe" (bilingual in Spanish), require the use of dead keys. 
 
@@ -94,11 +94,11 @@ This layout supersedes the original "English (intl., with AltGr dead keys)". Whi
 This is done by first going into the directory, then run patch with the input being the diff file corrisponding to your Linux distribution, or the version most near to it. Try a dry run first:
 
     $ cd /usr/share/X11/xkb/symbols
-    $ sudo patch --dry-run --force < ~/code/SmartLayer/layout/ubuntu-23.04.diff
+    $ sudo patch --dry-run --force < ~/code/Heptad/layout/ubuntu-23.04.diff
 
 After the dry run, if it shows no errors, do a real run:
 
-    $ sudo patch --force < ~/code/SmartLayer/layout/ubuntu-23.04.diff
+    $ sudo patch --force < ~/code/Heptad/layout/ubuntu-23.04.diff
 
 Once this is done, don't forget to go to Gnome Settings, choose Keyboard and choose "English (intl., with AltGr dead keys)".
 
@@ -108,7 +108,7 @@ There are [additional instructions](SMALL-KEYBOARDS.md) if you need a special co
 
 While the layout aims to enhance the typing experience, there are a few known issues and areas for potential improvement:
 
-- **Missing Superscript Minus**: Currently, there is no superscript minus symbol because the muscular and feminine cardinal took the place where you would expect superscript minus. I am guilty of not using the symbol, as I use superscripts for elliptic curve math, primarily involving addition. Still, a solution is needed.
+- **Missing Superscript Minus**: There is no superscript minus symbol, because the muscular and feminine cardinal took the place where you would expect it. The symbol is seldom needed in the additive superscript notation common to elliptic-curve arithmetic, but a complete layout still calls for it.
 - **Unused Alt Key Combinations**: The combinations `alt+g`, `alt+shift+g` and `alt+m` and `alt+shift+m` currently do not produce any special symbols.
 - **Insufficient Greek letters**. One suggestion was that there should be enough Greek letters to denote the SARS-CoV-2 variants, but there were just too many.
 
@@ -118,8 +118,8 @@ These issues will be considered for future updates and improvements.
 
 - Superscript `o` **ᵒ**, and superscript `a` **ᵃ** can be used for muscular and feminine cardinal **º** and **ª**, so having all of them on a keyboard layout appears over-designed. However, cardinal numbers have underscores in certain fonts; they are visually not replaceable for each other. People who speak Spanish or Portuguese can tell.
 - Degree Sign: Several symbols resemble the Degree Sign. The authentic Degree Sign is located on the number key 5. Pressing <kbd>Alt</kbd>+<kbd>shift</kbd>+<kbd>0</kbd> twice produces the symbol °, which closely resembles the Degree Sign. However, it's the circle atop the letter Ů. While the muscular cardinal sign and the superscript letter `o` may also appear similar to the Degree Sign, they serve different functions.
-- Usually, capital N followed by muscular cardinal º, when typed together like this Nº, suffices as a substitute for Numero sign №. We kept both anyway.
-- The Latin Alpha (ɑ) and Copyright (©) symbols have little real-life uses. Pity.
+- Usually, capital N followed by muscular cardinal º, when typed together like this Nº, suffices as a substitute for Numero sign №. Both are kept anyway.
+- The Latin Alpha (ɑ) and Copyright (©) symbols have little real-life use.
 
 
 ### Helpful Knowledge
