@@ -82,6 +82,20 @@ Heptad ships as a self-contained symbols file, `symbols/heptad`, that `include`s
 
 To use Heptad on your Linux/*nix system, follow the installation instructions below.
 
+### Platform support and cross-platform plan
+
+Heptad is intended for every platform, not only Linux. The current Linux/XKB-only implementation reflects where it was first written, not a decision to limit it there.
+
+The obstacle to a full Windows and macOS release is specific to Heptad's design: the math layers on levels 5–7 (italic, superscript, and subscript letters) live on the Super (Windows/Command) key. Native Windows layouts made with the Microsoft Keyboard Layout Creator do not treat the Windows key as a character modifier, offering only base, Shift, AltGr, and Shift+AltGr; macOS `.keylayout` files give Option as an AltGr-equivalent (levels 3–4) but no second Command-based character layer without colliding with system shortcuts. A native port on either OS therefore carries the US base and the AltGr accent layers but drops the Super math layers, which are most of the point of Heptad.
+
+The plan for parity beyond Linux:
+
+1. **Native layer where it fits**: an MSKLC layout on Windows and a Ukelele `.keylayout`/`.bundle` on macOS for the US base and AltGr accent layers (levels 1–4), packaged as `.exe`/`.msi` and `.dmg`/Homebrew cask.
+2. **Remapper for the math layers**: deliver the Super-based levels 5–7 through a key-remapper that can bind the Windows/Command key to character output: AutoHotkey or kanata on Windows, Karabiner-Elements on macOS.
+3. **Single source, generated outputs**: generate the XKB, MSKLC `.klc`, and macOS `.keylayout` forms from one description rather than maintaining three by hand, which otherwise drift.
+
+The evidence behind this plan, a survey of how 128 other layout projects distribute and license their work, is in [`Research/keyboard-layout-distribution-survey.md`](Research/keyboard-layout-distribution-survey.md).
+
 [^microsoft]: The "English (intl., with AltGr dead keys)" layout, originally developed by Microsoft, enables typing in virtually any Latin-based script. It is optimised explicitly for Spanish and French, designed to minimize the use of dead keys. Only a few words, such as "bilingüe" (bilingual in Spanish), require the use of dead keys. 
 
 ### Installation
