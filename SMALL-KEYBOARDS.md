@@ -2,7 +2,7 @@
 
 ## 1. Swap ESC key and the tile key with `swap_esc_tlde.diff` ###
 
-For keyboards with a limited number of keys (63 keys), where the upper-left key is often assigned to ESC instead of tilde, you may prefer to have the tilde key for its use in vim and command line operations. To change the ESC key to a tilde, add the following to the section "English (intl., with AltGr dead keys)":
+For keyboards with a limited number of keys (63 keys), where the upper-left key is often assigned to ESC instead of tilde, you may prefer to have the tilde key for its use in vim and command line operations. To change the ESC key to a tilde, add the following inside the `xkb_symbols "heptad"` block of `/usr/share/X11/xkb/symbols/heptad`:
 
 ```bash
 key <ESC> { [    grave, asciitilde,  dead_grave,   dead_tilde, Escape ] };
@@ -14,7 +14,7 @@ This layout is designed to enhance the typing experience for users frequently wo
 
 In this project, we remapped LWIN key (Left Windows) to ISO_Level5_Shift. If your keyboard lacks a WIN key,  you can repurpose the CAPS key to serve as `ISO_Level5_Shift` using a feature called tap-hold pattern, which means a key function differently when it is tapped then when it is held in combination of another key. You can do so through 2 simple steps, 
 
-1. **Remap the CAPS Key**: Add the following to `/usr/share/X11/xkb/symbols/us`:
+1. **Remap the CAPS Key**: Add the following to `/usr/share/X11/xkb/symbols/heptad`:
    ```
    // Map CAPS to ISO_Level5_Shift and let someone else play Caps_Lock
    key <CAPS> { [ ISO_Level5_Shift ] };

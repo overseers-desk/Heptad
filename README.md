@@ -78,7 +78,7 @@ Heptad is implemented for Linux and *nix systems using the XKB system.
 
 The layout is based on a modification of the "English (intl., with AltGr dead keys)" keyboard layout, originally developed by Microsoft[^microsoft]. It's optimized for typing mathematical symbols and expressions without compromising the original layout's multi-lingual capabilities.
 
-The implementation is designed as a diff file against the /usr/share/X11/xkb/symbols/us file that comes with Ubuntu, replacing the "English (intl., with AltGr dead keys)" layout directly. The repository is updated with every Ubuntu LTS release.
+Heptad ships as a self-contained symbols file, `symbols/heptad`, that `include`s the stock `us(intl)` layout and layers its seven levels on top. It installs as its own layout named "Heptad" and leaves the distribution's `us` file untouched. Because it depends only on `us(intl)`, one file serves every Ubuntu version.
 
 To use Heptad on your Linux/*nix system, follow the installation instructions below.
 
@@ -86,25 +86,30 @@ To use Heptad on your Linux/*nix system, follow the installation instructions be
 
 ### Installation
 
-For Ubuntu 23.04:
-1. Replace `/usr/share/X11/xkb/symbols/us` with `layout/ubuntu-23.04.us`.
-2. In X11, select the "English (intl., with AltGr dead keys)" layout.
-3. For Wayland users, configure the layout within your Wayland compositor settings.
+Run the installer from a clone of this repository:
 
-This layout supersedes the original "English (intl., with AltGr dead keys)". While a dedicated OS package would be ideal, none currently exists. For other Linux versions or X11, apply `layout/ubuntu-23.04.diff` to `/usr/share/X11/xkb/symbols/us` using the patch command.
+    $ ./install.sh
 
-This is done by first going into the directory, then run patch with the input being the diff file corrisponding to your Linux distribution, or the version most near to it. Try a dry run first:
+It copies `symbols/heptad` into `/usr/share/X11/xkb/symbols/` and registers the layout in `/usr/share/X11/xkb/rules/evdev.xml`. It asks for your password, since those are system files. The script is idempotent: re-run it after an `xkeyboard-config` package upgrade, which reverts files under `/usr/share/X11/xkb`.
 
-    $ cd /usr/share/X11/xkb/symbols
-    $ sudo patch --dry-run --force < ~/code/Heptad/layout/ubuntu-23.04.diff
+Then activate the layout: GNOME Settings → Keyboard → Input Sources → **+** → search "Heptad". If it does not appear at once, log out and back in. From a terminal you can instead run:
 
-After the dry run, if it shows no errors, do a real run:
+    $ gsettings set org.gnome.desktop.input-sources sources "[('xkb','heptad')]"
 
-    $ sudo patch --force < ~/code/Heptad/layout/ubuntu-23.04.diff
-
-Once this is done, don't forget to go to Gnome Settings, choose Keyboard and choose "English (intl., with AltGr dead keys)".
+On Wayland sessions you can avoid `sudo` by placing `symbols/heptad` under `~/.config/xkb/symbols/` and the `<layout>` block from `heptad.xml` under `~/.config/xkb/rules/evdev.xml`; that survives system upgrades but is not read by X11 sessions.
 
 There are [additional instructions](SMALL-KEYBOARDS.md) if you need a special configuration for small keyboards.
+
+#### Legacy patch method (Ubuntu 23.10 and earlier)
+
+Older releases were delivered by patching the system `us` file directly, and the per-release patches remain under `layout/` for those versions. Go into the XKB symbols directory and apply the diff nearest your distribution, dry run first:
+
+    $ cd /usr/share/X11/xkb/symbols
+    $ sudo patch --dry-run --force < /path/to/Heptad/layout/ubuntu-23.04.diff
+
+If the dry run shows no errors, do the real run, then select "English (intl., with AltGr dead keys)" in GNOME Settings:
+
+    $ sudo patch --force < /path/to/Heptad/layout/ubuntu-23.04.diff
 
 ### Known Issues
 
