@@ -1,5 +1,3 @@
-<!-- Heptad layout registry entry. install.sh splices this <layout> block into
-     /usr/share/X11/xkb/rules/evdev.xml just before </layoutList>. -->
     <layout>
       <configItem>
         <name>heptad</name>
