@@ -1,0 +1,16 @@
+<!-- Heptad layout registry entry. install.sh splices this <layout> block into
+     /usr/share/X11/xkb/rules/evdev.xml just before </layoutList>. -->
+    <layout>
+      <configItem>
+        <name>heptad</name>
+        <shortDescription>hep</shortDescription>
+        <description>Heptad (seven-level: math + multilingual)</description>
+        <languageList>
+          <iso639Id>eng</iso639Id>
+          <iso639Id>spa</iso639Id>
+          <iso639Id>deu</iso639Id>
+          <iso639Id>fra</iso639Id>
+          <iso639Id>ita</iso639Id>
+        </languageList>
+      </configItem>
+    </layout>
